@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.column {
+  float: left;
+}
+
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 25%;
+}
+
+.middle {
+  width: 25%;
+}
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: smaller;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 1px;
+}
+    </style>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>  
+    <div class="row">
+      <div class="column" style="background-color:#aaa;">
+        <h3>History</h3>
+        <textarea name="presentation" id="presentation" cols="50" rows="5" placeholder="Presentation...      Anaesthetic history.....      Past medical history....."></textarea>
+        <br>        
+        <!-- <h2>Anaesthetic history</h2>
+        <textarea name="anestheticHx" id="anaestheticHx" cols="50" rows="5"></textarea>
+        <br>
+        <h2>Past Medical History</h2>
+        <textarea name="PMH" id="PMH" cols="50" rows="5"></textarea>
+        <br> -->
+        <h3>Drug History</h3>
+        <textarea name="DH" id="DH" cols="50" rows="5"></textarea>
+        <br>
+        <h3>Allergies</h3>
+        <textarea name="Allergies" id="Allergies" cols="50" rows="5"></textarea>
+        <br>
+        <h3>Airway</h3>
+        Mallampati Class 1<input type="radio" name="mallampati" id="mallampati1" value="MP1">
+        Class 2<input type="radio" name="mallampati" id="mallampati2" value="MP2">
+        Class 3<input type="radio" name="mallampati" id="mallampati3" value="MP3">
+        Class 4<input type="radio" name="mallampati" id="mallampati4" value="MP4"> <br>
+        N/a <input checked type="radio" name="mallampati" id="mallampati5" value="N/a"> <br>
+        Calder A <input type="radio" name="calder" id="calder1" value="Calder A  ">
+        Calder B <input type="radio" name="calder" id="calder2" value="Calder B  ">
+        Calder C <input type="radio" name="calder" id="calder3" value="Calder C  "> <br>
+        n/a <input type="radio" name="calder" id="calder4" value="N/a" checked> <br>
+        Thyromental distance &gt;6cm <input type="radio" name="tmd" id="tmd1" value="TM distance &gt;6">
+         &lt;6cm <input type="radio" name="tmd" id="tmd2" value="TM distance &lt;6">
+         n/a <input type="radio" name="tmd" id="tmd3" value="TM n/a" checked> <br>
+        Teeth <br> No issues <input type="checkbox" name="teeth" id="teeth" value="Teeth no issues " checked> 
+        Vulnerable <input type="checkbox" name="teeth" id="teeth" value="Vulnerable"> 
+        Caps/crowns <input type="checkbox" name="teeth" id="teeth" value="Caps/crowns"> 
+        Dentures <input type="checkbox" name="teeth" id="teeth" value="Dentures"> 
+        
+
+        <br><textarea name="Airway" id="Airway" cols="50" rows="5"></textarea>
+        <br>
+        <h3>Disucssions</h3>
+        <textarea name="Discussions" id="Discussions" cols="50" rows="5"></textarea>
+      </div>
+      <div class="column" style="background-color:#aaa;">
+        <h3>Frailty</h3>
+          <input type="radio" id="frailty" name="frailty" value="1 Very fit">1 Very fit <br>
+          <input type="radio" id="frailty" name="frailty" value="2 well">2 well <br>
+          <input type="radio" id="frailty" name="frailty" value="3 Managing well">3 Managing well <br>
+          <input type="radio" id="frailty" name="frailty" value="4 Vulnerable">4 Vulnerable <br>
+          <input type="radio" id="frailty" name="frailty" value="5 Mildly Frail">5 Mildly Frail <br>
+          <input type="radio" id="frailty" name="frailty" value="6 Moderately frail">6 Moderately frail <br>
+          <input type="radio" id="frailty" name="frailty" value="7 Severely frail">7 Severely frail <br>
+          <input type="radio" id="frailty" name="frailty" value="8 Very severely frail">8 Very severely frail <br>
+          <input type="radio" id="frailty" name="frailty" value="9 Terminal illness">9 Terminal illness <br>
+          <input type="radio" id="frailty" name="frailty" value="N/a" checked>N/a <br>
+        <h3>Observations</h3>
+          <input type="text" id="Height" name="Height" >Height (m) <br>
+          <input type="text" id="Weight" name="Weight" >Weight (kg) <br>
+          <input type="text" id="HR" name="HR" >HR <br>
+          <input type="text" id="BP" name="BP" >BP <br>
+          <input type="text" id="RR" name="RR" >RR <br>
+          <input type="text" id="SpO2" name="SpO2" >SpO2 <br>
+          <input type="text" id="Temp" name="Temp" >Temp <br>
+        <h3>Investigations</h3>
+          <input type="date" id="covidDate" >Covid test date <br>
+          <input type="radio" name="covidres" id="covidres" value="Positive "> Positive
+          <input type="radio" name="covidres" id="covidres1" value="Negative "> Negative
+          <input type="radio" name="covidres" id="covidres2" value="Pending "> Pending 
+          <input type="radio" name="covidres" id="covidres3" value="not done " checked> Not done <br>
+          <input type="date" id="bloodDate" > Blood result date <br>
+          <input type="text" id="Hb" >Hb <br>
+          <input type="text" id="WBC" >WBC <br>
+          <input type="text" id="Plts" >Plts <br>
+          <input type="text" id="Na" >Na <br>
+          <input type="text" id="K" >K <br>
+          <input type="text" id="Urea" >Urea <br>
+          <input type="text" id="Creat" >Creat <br>
+          <input type="text" id="PT" >PT <br>
+          <input type="text" id="APTT" >APTT <br>
+          <input type="text" id="pH" >pH <br>
+          <input type="text" id="BE" >B.E. <br>
+          <input type="text" id="Lactate" >Lactate <br>
+          <input type="text" id="ECG" >ECG <br>
+          <input type="text" id="ChestX" >Chest Xray <br>
+          <br>
+          <button onclick="myFunction()">Copy text to clipboard you might have to use ctrl c</button>
+      
+        </div>
+      <div class="column" style="background-color:#aaa;">
+        <h3>Risks</h3>
+        <table>
+          <tr>
+            <th>Risks</th>
+            <th><input type="checkbox" onClick="toggleGA(this)" /> GA (select all)<br/></th>
+            <th><input type="checkbox" onClick="toggleReg(this)" /> Regional (select all)<br/></th>
+            <th><input type="checkbox" onClick="toggleLines(this)" /> Lines (select all)<br/></th>
+          </tr>
+          <tr>  
+            <td>Very Common <br>>1 in 10</td>
+            <th><input type="checkbox" id="riskGA" name="riskGA" value="Sore throat" checked>Sore throat
+              <input type="checkbox" id="riskGA" name="riskGA" value="Sickness" checked>Sickness <br>
+              <input type="checkbox" id="riskGA" name="riskGA" value="Shivering">Shivering
+              <input type="checkbox" id="riskGA" name="riskGA" value="Thirst">Thirst <br>
+              <input type="checkbox" id="riskGA" name="riskGA" value="Temp memory loss">Temp memory loss
+            </th>
+            <th><input type="checkbox" id="riskReg" name="riskReg" value="Low BP">Low BP
+              <input type="checkbox" id="riskReg" name="riskReg" value="Sickness" checked>Sickness <br>
+              <input type="checkbox" id="riskReg" name="riskReg" value="Itching" checked>Itching
+            </th>
+          </tr>
+          <tr>
+            <td>Common <br> 1 in 10-100</td>
+            <th><input type="checkbox" id="riskGA" name="riskGA" value="Pain injection site">Pain injection site <br>
+            <input type="checkbox" id="riskGA" name="riskGA" value="Minor lip or tongue injury">Minor lip tongue injury</th>
+          </tr>
+          <tr>
+            <td>Uncommon <br> 1 in 100-1,000</td>
+            <th>
+              <input type="checkbox" id="riskGA" name="riskGA" value="Minor nerve injury">Minor nerve injury
+            </th>
+            <th>
+              <input type="checkbox" id="riskReg" name="riskReg" value="Headache">Headache <br>
+              <input type="checkbox" id="riskReg" name="riskReg" value="Respiratory depression">Respiratory depression
+            </th>
+            <th>
+              <input type="checkbox" id="risklines" name="risklines" value="Infection"> Infection<br>
+              <input type="checkbox" id="risklines" name="risklines" value="Bleeding"> Bleeding<br>
+              <input type="checkbox" id="risklines" name="risklines" value="Arrhythmia"> Arrhythmia<br>
+              <input type="checkbox" id="risklines" name="risklines" value="Pneumothorax"> Pneumothorax<br>
+              <input type="checkbox" id="risklines" name="risklines" value="thrombosis/embolus"> thrombosis/embolus<br>
+            </th>
+          </tr>
+          <tr>
+            <td>Rare <br> 1 in 1000-10,000</td>
+            <th>
+              <input type="checkbox" id="riskGA" name="riskGA" value="Periferal nerve damage (permanent)">P. nerve damage (perm.) <br>
+              <input type="checkbox" id="riskGA" name="riskGA" value="Corneal abrasion">Corneal abrasion <br>
+              <input type="checkbox" id="riskGA" name="riskGA" value="Dental requiring treatment" checked>Dental requiring treatment <br>
+              <input type="checkbox" id="riskGA" name="riskGA" value="Anaphylaxis">Anaphylaxis
+            </th>
+          </tr>
+          <tr>
+            <td>Very Rare <br> 1 in 10-100,000</td>  
+            <th>
+              <input type="checkbox" id="riskGA" name="riskGA" value="Awareness under anaesthesia"> Anaesthetic awareness
+
+            </th>
+            <th>
+              <input type="checkbox" id="riskReg" name="riskReg" value="High block">High block <br>
+              <input type="checkbox" id="riskReg" name="riskReg" value="Temp nerve damage">Temp nerve damage
+            </th>
+          </tr>
+          <tr>
+            <td>Extremely rare <br> &lt; 1 in 100,000</td>  
+            <th>
+              <input type="checkbox" id="riskGA" name="riskGA" value="Vision loss">Vision loss <br>
+              <input type="checkbox" id="riskGA" name="riskGA" value="Death as direct result of anaesthesia">Death as direct <br> result of anaesthesia <br>
+            </th>
+            <th>
+              <input type="checkbox" id="riskReg" name="riskReg" value="LA toxicity">LA toxicity
+              <input type="checkbox" id="riskReg" name="riskReg" value="Infection">Infection <br>
+              <input type="checkbox" id="riskReg" name="riskReg" value="Perm. nerve damage">Perm. nerve damage
+            </th>
+          </tr>
+        </table>
+        <iframe src="http://www.sortsurgery.com/" title="SORT score" width="500" height="700"></iframe>
+      </div>
+        <script>
+            function myFunction() {
+                /* Get the text field */
+                let Airway = "Airway: " + document.getElementById("Airway").value;
+                let mallampati = + document.querySelector('input[name=mallampati]:checked').value;
+                let calder =  document.querySelector('input[name=calder]:checked').value;
+                let tmd =  document.querySelector('input[name=tmd]:checked').value;
+                let Allergies = "Allergies: " + document.getElementById("Allergies").value;
+                // let anaestheticHx = "Anaesthetic Hx: " + document.getElementById("anaestheticHx").value;
+                let DH = "Drug Hx: " + document.getElementById("DH").value;
+                let Discussions = "Discussions: " + document.getElementById("Discussions").value;
+                // let PMH = "PMHx: " + document.getElementById("PMH").value;
+                let presentation = "History: " + document.getElementById("presentation").value;
+
+                let frailty = "Frailty: " + document.querySelector('input[name=frailty]:checked').value;
+                let Height = "Height(m): " + document.getElementById("Height").value;
+                let Weight = "Weight(kg): " + document.getElementById("Weight").value;
+                let HR = "HR: " + document.getElementById("HR").value;
+                let BP = "BP: " + document.getElementById("BP").value;
+                let RR = "RR: " + document.getElementById("RR").value;
+                let SpO2 = "SpO2: " + document.getElementById("SpO2").value;
+                let Temp = "Temp: " + document.getElementById("Temp").value;
+                let covidDate = "Date: " + document.getElementById("covidDate").value;
+                let covidres = "COVID result: " + document.querySelector('input[name=covidres]:checked').value;
+                let bloodDate = "Date: " + document.getElementById("bloodDate").value;
+                let Hb = " Hb: " + document.getElementById("Hb").value;
+                let WBC = " WBC: " + document.getElementById("WBC").value;
+                let Plts = " Plts: " + document.getElementById("Plts").value;
+                let Na = " Na: " + document.getElementById("Na").value;
+                let K = " K: " + document.getElementById("K").value;
+                let Urea = " Urea: " + document.getElementById("Urea").value;
+                let Creat = " Creat: " + document.getElementById("Creat").value;
+                let PT = " PT: " + document.getElementById("PT").value;
+                let APTT = " APTT: " + document.getElementById("APTT").value;
+
+                let pH = " pH: " + document.getElementById("pH").value;
+                let BE = " BE: " + document.getElementById("BE").value;
+                let Lactate = "Lactate: " + document.getElementById("Lactate").value;
+                let ECG = "ECG: " + document.getElementById("ECG").value;
+                let ChestX = "Chest Xray: " + document.getElementById("ChestX").value;
+
+                var selectedriskGA;
+                var selectedriskReg;
+                var selectedrisklines;
+                var selectedTeeth = printChecked('teeth');
+
+                let texttocopy;
+                const breakUp = "\n____________\n";
+                selectedriskGA = printChecked('riskGA');
+                selectedriskReg = printChecked('riskReg');
+                selectedrisklines = printChecked('risklines');
+                console.log(selectedriskReg);
+
+                texttocopy = breakUp + covidres + covidDate + breakUp + presentation  + breakUp + DH + 
+                breakUp + Allergies + breakUp + Discussions + breakUp  + mallampati 
+                + calder + tmd + selectedTeeth + Airway + breakUp + Height + Weight + HR + BP + RR + 
+                SpO2 + Temp + frailty + breakUp + bloodDate + Hb + WBC + Plts + Na + K + Urea 
+                + Creat + PT + APTT + pH + BE + Lactate + ECG + ChestX  + breakUp + selectedriskGA 
+                + selectedriskReg + selectedrisklines;    
+
+                copyToClipboard(texttocopy);
+            };          
+
+  
+            function copyToClipboard(str) {
+                const el = document.createElement('textarea');
+                el.value = str;
+                el.setAttribute('readonly', '');
+                el.style.width = "50%";
+                el.style.height = "400px";
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+            };
+  
+            function printChecked(name){
+                var items=document.getElementsByName(name);
+                var selectedItems="";
+                for(var i=0; i<items.length; i++){
+                  if(items[i].type=='checkbox' && items[i].checked==true)
+                    selectedItems+=items[i].value+", ";
+                }
+                //console.log(selectedItems)
+                return(selectedItems)
+            };
+
+
+            function toggleGA(source) {
+                checkboxes = document.getElementsByName('riskGA');
+                for(var i=0, n=checkboxes.length;i<n;i++) {
+                  checkboxes[i].checked = source.checked;
+                }
+            }
+            function toggleReg(source) {
+                checkboxes = document.getElementsByName('riskReg');
+                for(var i=0, n=checkboxes.length;i<n;i++) {
+                  checkboxes[i].checked = source.checked;
+                }
+            }
+            function toggleLines(source) {
+                checkboxes = document.getElementsByName('risklines');
+                for(var i=0, n=checkboxes.length;i<n;i++) {
+                  checkboxes[i].checked = source.checked;
+                }
+            }
+
+            
+	$( function() {
+		var availableTags = [
+			"ActionScript",
+			"AppleScript",
+			"Asp",
+			"BASIC",
+			"C",
+			"C++",
+			"Clojure",
+			"COBOL",
+			"ColdFusion",
+			"Erlang",
+			"Fortran",
+			"Groovy",
+			"Haskell",
+			"Java",
+			"JavaScript",
+			"Lisp",
+			"Perl",
+			"PHP",
+			"Python",
+			"Ruby",
+			"Scala",
+			"Scheme"
+		];
+		function split( val ) {
+			return val.split( /,\s*/ );
+		}
+		function extractLast( term ) {
+			return split( term ).pop();
+		}
+
+		$( "#tags" )
+			// don't navigate away from the field on tab when selecting an item
+			.on( "keydown", function( event ) {
+				if ( event.keyCode === $.ui.keyCode.TAB &&
+						$( this ).autocomplete( "instance" ).menu.active ) {
+					event.preventDefault();
+				}
+			})
+			.autocomplete({
+				minLength: 0,
+				source: function( request, response ) {
+					// delegate back to autocomplete, but extract the last term
+					response( $.ui.autocomplete.filter(
+						availableTags, extractLast( request.term ) ) );
+				},
+				focus: function() {
+					// prevent value inserted on focus
+					return false;
+				},
+				select: function( event, ui ) {
+					var terms = split( this.value );
+					// remove the current input
+					terms.pop();
+					// add the selected item
+					terms.push( ui.item.value );
+					// add placeholder to get the comma-and-space at the end
+					terms.push( "" );
+					this.value = terms.join( ", " );
+					return false;
+				}
+			});
+	} );
+	
+        </script>
+      </div>
+    </body>
+</html>
