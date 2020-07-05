@@ -57,19 +57,19 @@ th, td {
         <textarea name="Allergies" id="Allergies" cols="50" rows="5"></textarea>
         <br>
         <h3>Airway</h3>
-        Mallampati Class 1<input type="radio" name="mallampati" id="mallampati1" value="MP1">
+        <b>Mallampati</b> <br> Class 1<input type="radio" name="mallampati" id="mallampati1" value="MP1">
         Class 2<input type="radio" name="mallampati" id="mallampati2" value="MP2">
         Class 3<input type="radio" name="mallampati" id="mallampati3" value="MP3">
-        Class 4<input type="radio" name="mallampati" id="mallampati4" value="MP4"> <br>
-        N/a <input checked type="radio" name="mallampati" id="mallampati5" value="N/a"> <br>
-        Calder A <input type="radio" name="calder" id="calder1" value="Calder A  ">
+        Class 4<input type="radio" name="mallampati" id="mallampati4" value="MP4">
+        n/a <input checked type="radio" name="mallampati" id="mallampati5" value="n/a"> <br>
+        <b>Calder</b> <br> Calder A <input type="radio" name="calder" id="calder1" value="Calder A  ">
         Calder B <input type="radio" name="calder" id="calder2" value="Calder B  ">
-        Calder C <input type="radio" name="calder" id="calder3" value="Calder C  "> <br>
+        Calder C <input type="radio" name="calder" id="calder3" value="Calder C  ">
         n/a <input type="radio" name="calder" id="calder4" value="N/a" checked> <br>
-        Thyromental distance &gt;6cm <input type="radio" name="tmd" id="tmd1" value="TM distance &gt;6">
+        <b>TM distance</b> <br>  &gt;6cm <input type="radio" name="tmd" id="tmd1" value="TM distance &gt;6">
          &lt;6cm <input type="radio" name="tmd" id="tmd2" value="TM distance &lt;6">
          n/a <input type="radio" name="tmd" id="tmd3" value="TM n/a" checked> <br>
-        Teeth <br> No issues <input type="checkbox" name="teeth" id="teeth" value="Teeth no issues " checked> 
+        <b>Teeth</b>  <br> No issues <input type="checkbox" name="teeth" id="teeth" value="Teeth no issues " checked> 
         Vulnerable <input type="checkbox" name="teeth" id="teeth" value="Vulnerable"> 
         Caps/crowns <input type="checkbox" name="teeth" id="teeth" value="Caps/crowns"> 
         Dentures <input type="checkbox" name="teeth" id="teeth" value="Dentures"> 
@@ -77,8 +77,15 @@ th, td {
 
         <br><textarea name="Airway" id="Airway" cols="50" rows="5"></textarea>
         <br>
-        <h3>Disucssions</h3>
+        <h3>Discussions</h3>
         <textarea name="Discussions" id="Discussions" cols="50" rows="5"></textarea>
+        <p>Once you have completed this from click the copy text to <br>
+          clipboard button navigate to Emergencylist and paste text <br>
+          into the anaesthetic notes section. <br>
+          (ctrl + v or Edit --> paste) <br>
+          On emergencylist hovering over the i will show your <br>
+          anaesthtic assessment. <br>
+        </p>
       </div>
       <div class="column" style="background-color:#aaa;">
         <h3>Frailty</h3>
@@ -93,36 +100,38 @@ th, td {
           <input type="radio" id="frailty" name="frailty" value="9 Terminal illness">9 Terminal illness <br>
           <input type="radio" id="frailty" name="frailty" value="N/a" checked>N/a <br>
         <h3>Observations</h3>
-          <input type="text" id="Height" name="Height" >Height (m) <br>
-          <input type="text" id="Weight" name="Weight" >Weight (kg) <br>
-          <input type="text" id="HR" name="HR" >HR <br>
-          <input type="text" id="BP" name="BP" >BP <br>
-          <input type="text" id="RR" name="RR" >RR <br>
-          <input type="text" id="SpO2" name="SpO2" >SpO2 <br>
-          <input type="text" id="Temp" name="Temp" >Temp <br>
+          <input type="text" size="6" id="Height" name="Height" >Height (m) <br>
+          <input type="text" size="6" id="Weight" name="Weight" >Weight (kg) <br>
+          <input type="text" size="6" id="HR" name="HR" >HR <br>
+          <input type="text" size="6" id="BP" name="BP" >BP <br>
+          <input type="text" size="6" id="RR" name="RR" >RR <br>
+          <input type="text" size="6" id="SpO2" name="SpO2" >SpO2 <br>
+          <input type="text" size="6" id="Temp" name="Temp" >Temp <br>
         <h3>Investigations</h3>
-          <input type="date" id="covidDate" >Covid test date <br>
+          COVID test <br>
+          <input type="date" id="covidDate" ><br>
           <input type="radio" name="covidres" id="covidres" value="Positive "> Positive
-          <input type="radio" name="covidres" id="covidres1" value="Negative "> Negative
+          <input type="radio" name="covidres" id="covidres1" value="Negative "> Negative <br>
           <input type="radio" name="covidres" id="covidres2" value="Pending "> Pending 
           <input type="radio" name="covidres" id="covidres3" value="not done " checked> Not done <br>
-          <input type="date" id="bloodDate" > Blood result date <br>
-          <input type="text" id="Hb" >Hb <br>
-          <input type="text" id="WBC" >WBC <br>
-          <input type="text" id="Plts" >Plts <br>
-          <input type="text" id="Na" >Na <br>
-          <input type="text" id="K" >K <br>
-          <input type="text" id="Urea" >Urea <br>
-          <input type="text" id="Creat" >Creat <br>
-          <input type="text" id="PT" >PT <br>
-          <input type="text" id="APTT" >APTT <br>
-          <input type="text" id="pH" >pH <br>
-          <input type="text" id="BE" >B.E. <br>
-          <input type="text" id="Lactate" >Lactate <br>
-          <input type="text" id="ECG" >ECG <br>
-          <input type="text" id="ChestX" >Chest Xray <br>
+          <br> Blood tests <br>
+          <input type="date" id="bloodDate" ><br>
+          <input type="text" size="6" id="Hb" >Hb <br>
+          <input type="text" size="6" id="WBC" >WBC <br>
+          <input type="text" size="6" id="Plts" >Plts <br>
+          <input type="text" size="6" id="Na" >Na <br>
+          <input type="text" size="6" id="K" >K <br>
+          <input type="text" size="6" id="Urea" >Urea <br>
+          <input type="text" size="6" id="Creat" >Creat <br>
+          <input type="text" size="6" id="PT" >PT <br>
+          <input type="text" size="6" id="APTT" >APTT <br>
+          <input type="text" size="6" id="pH" >pH <br>
+          <input type="text" size="6" id="BE" >B.E. <br>
+          <input type="text" size="6" id="Lactate" >Lactate <br>
+          ECG<br><input type="text" size="" id="ECG" > <br>
+          Chest Xray <br><input type="text" size="" id="ChestX" > <br>
           <br>
-          <button onclick="myFunction()">Copy text to clipboard you might have to use ctrl c</button>
+          <button onclick="myFunction()">Copy text to clipboard</button>
       
         </div>
       <div class="column" style="background-color:#aaa;">
@@ -202,8 +211,9 @@ th, td {
             </th>
           </tr>
         </table>
-        <iframe src="http://www.sortsurgery.com/" title="SORT score" width="500" height="700"></iframe>
+        <!-- <iframe src="http://www.sortsurgery.com/" title="SORT score" width="500" height="700"></iframe> -->
       </div>
+  
         <script>
             function myFunction() {
                 /* Get the text field */
