@@ -63,7 +63,7 @@ button {
         <textarea name="Allergies" id="Allergies" cols="50" rows="5"></textarea>
         <br>
         <h3>Airway</h3>
-        <b>Mallampati</b> <br> Class 1<input type="radio" name="mallampati" id="mallampati1" value="MP1">
+        Mallampati Class 1<input type="radio" name="mallampati" id="mallampati1" value="MP1">
         Class 2<input type="radio" name="mallampati" id="mallampati2" value="MP2">
         Class 3<input type="radio" name="mallampati" id="mallampati3" value="MP3">
         Class 4<input type="radio" name="mallampati" id="mallampati4" value="MP4">
@@ -83,15 +83,8 @@ button {
 
         <br><textarea name="Airway" id="Airway" cols="50" rows="5"></textarea>
         <br>
-        <h3>Discussions</h3>
+        <h3>Disucssions</h3>
         <textarea name="Discussions" id="Discussions" cols="50" rows="5"></textarea>
-        <p>Once you have completed this from click the copy text to <br>
-          clipboard button navigate to Emergencylist and paste text <br>
-          into the anaesthetic notes section. <br>
-          (ctrl + v or Edit --> paste) <br>
-          On emergencylist hovering over the i will show your <br>
-          anaesthtic assessment. <br>
-        </p>
       </div>
       <div class="column" style="background-color:#aaa;">
         <h3>Frailty</h3>
@@ -106,36 +99,34 @@ button {
           <input type="radio" id="frailty" name="frailty" value="9 Terminal illness">9 Terminal illness <br>
           <input type="radio" id="frailty" name="frailty" value="N/a" checked>N/a <br>
         <h3>Observations</h3>
-          <input type="text" size="6" id="Height" name="Height" >Height (m) <br>
-          <input type="text" size="6" id="Weight" name="Weight" >Weight (kg) <br>
-          <input type="text" size="6" id="HR" name="HR" >HR <br>
-          <input type="text" size="6" id="BP" name="BP" >BP <br>
-          <input type="text" size="6" id="RR" name="RR" >RR <br>
-          <input type="text" size="6" id="SpO2" name="SpO2" >SpO2 <br>
-          <input type="text" size="6" id="Temp" name="Temp" >Temp <br>
+          <input type="text" id="Height" name="Height" >Height (m) <br>
+          <input type="text" id="Weight" name="Weight" >Weight (kg) <br>
+          <input type="text" id="HR" name="HR" >HR <br>
+          <input type="text" id="BP" name="BP" >BP <br>
+          <input type="text" id="RR" name="RR" >RR <br>
+          <input type="text" id="SpO2" name="SpO2" >SpO2 <br>
+          <input type="text" id="Temp" name="Temp" >Temp <br>
         <h3>Investigations</h3>
-          COVID test <br>
-          <input type="date" id="covidDate" ><br>
+          <input type="date" id="covidDate" >Covid test date <br>
           <input type="radio" name="covidres" id="covidres" value="Positive "> Positive
-          <input type="radio" name="covidres" id="covidres1" value="Negative "> Negative <br>
+          <input type="radio" name="covidres" id="covidres1" value="Negative "> Negative
           <input type="radio" name="covidres" id="covidres2" value="Pending "> Pending 
           <input type="radio" name="covidres" id="covidres3" value="not done " checked> Not done <br>
-          <br> Blood tests <br>
-          <input type="date" id="bloodDate" ><br>
-          <input type="text" size="6" id="Hb" >Hb <br>
-          <input type="text" size="6" id="WBC" >WBC <br>
-          <input type="text" size="6" id="Plts" >Plts <br>
-          <input type="text" size="6" id="Na" >Na <br>
-          <input type="text" size="6" id="K" >K <br>
-          <input type="text" size="6" id="Urea" >Urea <br>
-          <input type="text" size="6" id="Creat" >Creat <br>
-          <input type="text" size="6" id="PT" >PT <br>
-          <input type="text" size="6" id="APTT" >APTT <br>
-          <input type="text" size="6" id="pH" >pH <br>
-          <input type="text" size="6" id="BE" >B.E. <br>
-          <input type="text" size="6" id="Lactate" >Lactate <br>
-          ECG<br><input type="text" size="" id="ECG" > <br>
-          Chest Xray <br><input type="text" size="" id="ChestX" > <br>
+          <input type="date" id="bloodDate" > Blood result date <br>
+          <input type="text" id="Hb" >Hb <br>
+          <input type="text" id="WBC" >WBC <br>
+          <input type="text" id="Plts" >Plts <br>
+          <input type="text" id="Na" >Na <br>
+          <input type="text" id="K" >K <br>
+          <input type="text" id="Urea" >Urea <br>
+          <input type="text" id="Creat" >Creat <br>
+          <input type="text" id="PT" >PT <br>
+          <input type="text" id="APTT" >APTT <br>
+          <input type="text" id="pH" >pH <br>
+          <input type="text" id="BE" >B.E. <br>
+          <input type="text" id="Lactate" >Lactate <br>
+          <input type="text" id="ECG" >ECG <br>
+          <input type="text" id="ChestX" >Chest Xray <br>
           <br>
           
       
@@ -218,10 +209,114 @@ button {
           </tr>
         </table>
         <button onclick="myFunction()">Copy text to clipboard</button>
-        <iframe src="http://www.sortsurgery.com/" title="SORT score" width="500" height="700"></iframe>
+        <!-- <iframe src="http://www.sortsurgery.com/" title="SORT score" width="500" height="700"></iframe> -->
       </div>
   
-        <script src="../js/basics.js"></script>
+        <script>function myFunction() {
+          /* Get the text field */
+          let Airway =  document.getElementById("Airway").value;
+          let mallampati = "Airway: " + document.querySelector('input[name=mallampati]:checked').value;
+          let calder =  document.querySelector('input[name=calder]:checked').value;
+          let tmd =  document.querySelector('input[name=tmd]:checked').value + " ";
+          let Allergies = "Allergies: " + document.getElementById("Allergies").value;
+          // let anaestheticHx = "Anaesthetic Hx: " + document.getElementById("anaestheticHx").value;
+          let DH = "Drug Hx: " + document.getElementById("DH").value;
+          let Discussions = "Discussions: " + document.getElementById("Discussions").value;
+          // let PMH = "PMHx: " + document.getElementById("PMH").value;
+          let presentation = "History: " + document.getElementById("presentation").value;
+
+          let frailty = "Frailty: " + document.querySelector('input[name=frailty]:checked').value;
+          let Height = "Height(m): " + document.getElementById("Height").value;
+          let Weight = "Weight(kg): " + document.getElementById("Weight").value;
+          let HR = "HR: " + document.getElementById("HR").value;
+          let BP = "BP: " + document.getElementById("BP").value;
+          let RR = "RR: " + document.getElementById("RR").value;
+          let SpO2 = "SpO2: " + document.getElementById("SpO2").value;
+          let Temp = "Temp: " + document.getElementById("Temp").value;
+          let covidDate = "Date: " + document.getElementById("covidDate").value;
+          let covidres = "COVID result: " + document.querySelector('input[name=covidres]:checked').value;
+          let bloodDate = "Date: " + document.getElementById("bloodDate").value;
+          let Hb = " Hb: " + document.getElementById("Hb").value;
+          let WBC = " WBC: " + document.getElementById("WBC").value;
+          let Plts = " Plts: " + document.getElementById("Plts").value;
+          let Na = " Na: " + document.getElementById("Na").value;
+          let K = " K: " + document.getElementById("K").value;
+          let Urea = " Urea: " + document.getElementById("Urea").value;
+          let Creat = " Creat: " + document.getElementById("Creat").value;
+          let PT = " PT: " + document.getElementById("PT").value;
+          let APTT = " APTT: " + document.getElementById("APTT").value;
+
+          let pH = " pH: " + document.getElementById("pH").value;
+          let BE = " BE: " + document.getElementById("BE").value;
+          let Lactate = "Lactate: " + document.getElementById("Lactate").value;
+          let ECG = "ECG: " + document.getElementById("ECG").value;
+          let ChestX = "Chest Xray: " + document.getElementById("ChestX").value;
+
+          var selectedriskGA;
+          var selectedriskReg;
+          var selectedrisklines;
+          var selectedTeeth = printChecked('teeth');
+
+          let texttocopy;
+          const breakUp = "\n____________\n";
+          selectedriskGA = printChecked('riskGA');
+          selectedriskReg = printChecked('riskReg');
+          selectedrisklines = printChecked('risklines');
+          console.log(selectedriskReg);
+
+          texttocopy = breakUp + covidres + covidDate + breakUp + presentation  + breakUp + DH + 
+          breakUp + Allergies + breakUp + Discussions + breakUp  + mallampati 
+          + calder + tmd + selectedTeeth + Airway + breakUp + Height + Weight + HR + BP + RR + 
+          SpO2 + Temp + frailty + breakUp + bloodDate + Hb + WBC + Plts + Na + K + Urea 
+          + Creat + PT + APTT + pH + BE + Lactate + ECG + ChestX  + breakUp + selectedriskGA 
+          + selectedriskReg + selectedrisklines;    
+
+          copyToClipboard(texttocopy);
+      };          
+
+
+      function copyToClipboard(str) {
+          const el = document.createElement('textarea');
+          el.value = str;
+          el.setAttribute('readonly', '');
+          el.style.width = "50%";
+          el.style.height = "400px";
+          document.body.appendChild(el);
+          el.select();
+          document.execCommand('copy');
+          window.alert("Text copied to clipboard")
+      };
+
+      function printChecked(name){
+          var items=document.getElementsByName(name);
+          var selectedItems="";
+          for(var i=0; i<items.length; i++){
+            if(items[i].type=='checkbox' && items[i].checked==true)
+              selectedItems+=items[i].value+", ";
+          }
+          //console.log(selectedItems)
+          return(selectedItems)
+      };
+
+
+      function toggleGA(source) {
+          checkboxes = document.getElementsByName('riskGA');
+          for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+          }
+      }
+      function toggleReg(source) {
+          checkboxes = document.getElementsByName('riskReg');
+          for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+          }
+      }
+      function toggleLines(source) {
+          checkboxes = document.getElementsByName('risklines');
+          for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+          }
+      }</script>
         <script src="../js/autocomplete.js"></script>
       </div>
     </body>
