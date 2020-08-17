@@ -212,7 +212,10 @@ button {
         <!-- <iframe src="http://www.sortsurgery.com/" title="SORT score" width="500" height="700"></iframe> -->
       </div>
   
-        <script>function myFunction() {
+        <script>
+        
+        
+        function myFunction() {
           /* Get the text field */
           let Airway =  document.getElementById("Airway").value;
           let mallampati = "Airway: " + document.querySelector('input[name=mallampati]:checked').value;
@@ -316,7 +319,13 @@ button {
           for(var i=0, n=checkboxes.length;i<n;i++) {
             checkboxes[i].checked = source.checked;
           }
-      }</script>
+      }
+      window.onbeforeunload = function() {
+          return "Do you really want to leave our brilliant application?";
+          //if we return nothing here (just calling return;) then there will be no pop-up question at all
+          //return;
+      };
+      </script>
         <script src="../js/autocomplete.js"></script>
       </div>
     </body>
